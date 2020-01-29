@@ -35,7 +35,7 @@ function App() {
                 <Route exact path="/clientes" component={ClienteList}/>
                 <Route exact path="/clientes/create" component={ClienteCreate}/>
                 <Route exact path="/clientes/:id/update" component={ClienteUpdate}/>
-                <Route path="/clientes/:id" component={ClienteDetail}/>
+                <Route exact path="/clientes/:id" component={ClienteDetail}/>
               </Switch>
             </div>
           </Col>
