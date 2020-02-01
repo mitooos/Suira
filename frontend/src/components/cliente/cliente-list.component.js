@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 import ClienteTableRow from './child-components/ClienteTableRow';
+import Button from 'react-bootstrap/Button';
+import {Link} from 'react-router-dom';
 
 export default class ClienteList extends Component{
     
@@ -46,6 +48,9 @@ export default class ClienteList extends Component{
                         {this.DataTable()}
                     </tbody>
                 </Table>
+                <Link to={"/clientes/create"}>
+                    <Button variant="primary" size="lg" block="block">Agregar</Button>
+                </Link>
             </div>
         );
     }

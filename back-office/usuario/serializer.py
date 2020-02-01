@@ -5,3 +5,6 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
         fields = ['username', 'password']
+        extra_kwargs = {
+            'username': {'validators': []},
+        }
