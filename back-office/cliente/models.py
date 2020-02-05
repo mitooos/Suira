@@ -5,7 +5,7 @@ from perfil.models import Perfil
 
 class Cliente(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    perfil = models.ForeignKey(Perfil, on_delete=models.SET_NULL, null=True)
+    perfil = models.ForeignKey(Perfil, on_delete=models.SET_NULL, null=True, related_name="clientes")
     nombre = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)
     n_trabajos = models.IntegerField()

@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Cliente
 from usuario.serializer import UserSerializer
-from perfil.serializer import PerfilSerializer
+from perfil.seializers.serializer import PerfilSerializer
 
 class ClienteSerializer(serializers.ModelSerializer):
     usuario = UserSerializer()
@@ -10,3 +10,9 @@ class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
         fields = '__all__'
+
+class SimpleClienteSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Cliente
+        fields = ['nombre', 'email']

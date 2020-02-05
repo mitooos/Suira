@@ -14,6 +14,8 @@ import ClienteCreate from './components/cliente/cliente-create.component'
 import ClienteDetail from './components/cliente/cliente-detail.component'
 import ClienteUpdate from './components/cliente/cliente-update.component'
 
+import ProfileList from './components/profile/profile-list.component';
+
 function App () {
   return (<Router>
     <div className='App'>
@@ -36,6 +38,8 @@ function App () {
                 <Route exact path='/clientes/create' component={ClienteCreate} />
                 <Route exact path='/clientes/:id/update' component={ClienteUpdate} />
                 <Route exact path='/clientes/:id' component={ClienteDetail} />
+
+                <Route exact path='/profiles' component={ProfileList} />
               </Switch>
             </div>
           </Col>
