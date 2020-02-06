@@ -1,0 +1,13 @@
+.tagsWrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    border: solid black 1px;
+    width: 18rem;
+    color: black;
+    height: 40rem;
+    margin: 0px;
+    padding: 5px;
+}

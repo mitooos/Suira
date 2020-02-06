@@ -15,6 +15,7 @@ import ClienteDetail from './components/cliente/cliente-detail.component'
 import ClienteUpdate from './components/cliente/cliente-update.component'
 
 import ProfileList from './components/profile/profile-list.component';
+import ProfileDetail from './components/profile/profile-detail.component';
 
 function App () {
   return (<Router>
@@ -25,6 +26,7 @@ function App () {
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
             <Nav.Link href='/clientes'>Clientes</Nav.Link>
+            <Nav.Link href='/profiles'>Perfiles</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -40,6 +42,7 @@ function App () {
                 <Route exact path='/clientes/:id' component={ClienteDetail} />
 
                 <Route exact path='/profiles' component={ProfileList} />
+                <Route exact path='/profiles/:id' component={ProfileDetail} />
               </Switch>
             </div>
           </Col>

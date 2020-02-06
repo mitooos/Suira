@@ -3,6 +3,9 @@ from .models import Perfil
 def get_perfiles():
     return Perfil.objects.all()
 
+def get_profile(pk):
+    return Perfil.objects.get(pk=pk)
+
 def create_profile(validated_data):
     empresa = validated_data.get('empresa')
     ruta_imagen = validated_data.get('ruta_imagen')
