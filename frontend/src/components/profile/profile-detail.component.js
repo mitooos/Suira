@@ -3,10 +3,12 @@ import axios from 'axios'
 import Image from 'react-bootstrap/Image'
 import Tag from './child-components/tags'
 import styles from './styles/profile.module.css'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
-export default class ProfileDetail extends Component{
+export default class ProfileDetail extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             cliente: '',
@@ -14,7 +16,7 @@ export default class ProfileDetail extends Component{
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         axios.get(process.env.REACT_APP_API_URL + 'profiles/' + this.props.match.params.id + '/')
             .then(res => {
                 this.setState({
@@ -33,29 +35,33 @@ export default class ProfileDetail extends Component{
             })
     }
 
-    renderTags(){
-        return this.state.tags.map((res,i) => {
-            return <Tag obj={res} key={i}/>
+    renderTags() {
+        return this.state.tags.map((res, i) => {
+            return <Tag obj={res} key={i} />
         })
     }
 
-    render(){
+    render() {
         return (
-            <div>
-                <Image src={this.state.ruta_imagen}></Image>
-                <h5>{this.state.nombre}</h5>
-                <div className={styles.tagsWrapper}>{this.renderTags()}</div>
-                <h6>Email: {this.state.email}</h6>
-                <h6>Telefono: {this.state.telefono}</h6>
-                <div>
-                    <h6>Trayectoría:</h6>
-                    <p>{this.state.trayectoria}</p>
-                </div>
-                <div>
-                    <h6>Descripción:</h6>
-                    <p>{this.state.descripcion}</p>
-                </div>
-            </div>
+            <Row>
+                <Col>
+                    <Image src={this.state.ruta_imagen}></Image>
+                    <div>
+                        <h6>Trayectoría:</h6>
+                        <p>{this.state.trayectoria}</p>
+                    </div>
+                </Col>
+                <Col>
+                    <h4>{this.state.nombre}</h4>
+                    <div className={styles.tagsWrapper}>{this.renderTags()}</div>
+                    <div>
+                        <h6>Descripción:</h6>
+                        <p>{this.state.descripcion}</p>
+                    </div>
+                    <h6>Email: {this.state.email}</h6>
+                    <h6>Telefono: {this.state.telefono}</h6>
+                </Col>
+            </Row>
         )
     }
 
