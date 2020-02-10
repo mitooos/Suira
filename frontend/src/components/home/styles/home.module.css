@@ -1,0 +1,40 @@
+.banner{
+    /* background-image: ; */
+    background-color: lightpink;
+    height: 400px;
+    width: 100%;
+}
+
+.bannerText{
+    position: relative;
+    top: 140px;
+    right: -5rem;
+    text-align: left;
+}
+
+
+.dos{
+    background-color: purple;
+    color: white;
+    height: 200px;
+    display: flex;
+}
+
+.dos h2{
+    margin: auto;
+}
+
+.profiles{
+   color: purple; 
+   text-align: left;
+   margin-top: 15px;
+   height: 500px;
+}
+
+#purple{
+    color: purple;
+}
+
+.bold{
+    font-weight: bolder;
+}

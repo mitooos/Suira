@@ -17,6 +17,8 @@ import ClienteUpdate from './components/cliente/cliente-update.component'
 import ProfileList from './components/profile/profile-list.component';
 import ProfileDetail from './components/profile/profile-detail.component';
 
+import HomeComponent from './components/home/home.component';
+
 function App () {
   return (<Router>
     <div className='App'>
@@ -43,6 +45,8 @@ function App () {
 
                 <Route exact path='/profiles' component={ProfileList} />
                 <Route exact path='/profiles/:id' component={ProfileDetail} />
+
+                <Route exact path='/' component={HomeComponent} />
               </Switch>
             </div>
           </Col>
