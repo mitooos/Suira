@@ -25,7 +25,7 @@ function App () {
   return (<Router>
     <div className='App'>
       <Navbar bg='light' expand='sm'>
-        <Navbar.Brand href='/'>Suira</Navbar.Brand>
+        <Navbar.Brand href='/'><img src="/logo.jpeg"alt="logo suira"/></Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
