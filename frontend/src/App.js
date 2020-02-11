@@ -19,6 +19,8 @@ import ProfileDetail from './components/profile/profile-detail.component';
 
 import HomeComponent from './components/home/home.component';
 
+import Footer from './components/footer/footer.component'
+
 function App () {
   return (<Router>
     <div className='App'>
@@ -53,7 +55,9 @@ function App () {
         </Row>
       </Container>
     </div>
+    <Footer/>
           </Router>
+    
   )
 }
 
