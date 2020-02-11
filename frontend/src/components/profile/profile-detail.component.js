@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Image from 'react-bootstrap/Image'
-import Tag from './child-components/tags'
+import Tag from '../shared-components/tags'
 import styles from './styles/profile.module.css'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'

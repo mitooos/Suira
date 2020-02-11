@@ -1,27 +1,19 @@
 .banner{
-    /* background-image: ; */
-    background-color: lightpink;
-    height: 400px;
+    background-image: url('/boy-child-clouds-kid-346796.jpg');
+    min-height: 600px;
+    min-width: 100%;
     width: 100%;
+    height: auto;
+    background-repeat:no-repeat;
+    background-size: cover;
 }
 
 .bannerText{
     position: relative;
     top: 140px;
-    right: -5rem;
+    margin-left: 4rem;
     text-align: left;
-}
-
-
-.dos{
-    background-color: purple;
-    color: white;
-    height: 200px;
-    display: flex;
-}
-
-.dos h2{
-    margin: auto;
+    max-width: 80%;
 }
 
 .profiles{
@@ -29,12 +21,45 @@
    text-align: left;
    margin-top: 15px;
    height: 500px;
+   margin-left: 3rem;
 }
 
-#purple{
+.carousel{
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.profilesButtons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.purple{
     color: purple;
 }
 
 .bold{
     font-weight: bolder;
+}
+
+.line{
+    display: inline-flex;
+}
+
+.tagsWrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    border: solid black 1px;
+    width: 18rem;
+    color: black;
+    height: 25rem;
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
 }
