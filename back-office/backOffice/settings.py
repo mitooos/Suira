@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'perfil',
     'tag',
     'usuario',
+    'link'
 ]
 
 MIDDLEWARE = [
