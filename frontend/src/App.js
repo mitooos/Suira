@@ -21,6 +21,8 @@ import HomeComponent from './components/home/home.component';
 
 import Footer from './components/footer/footer.component'
 
+import Login from './components/login/login.component'
+
 function App () {
   return (<Router>
     <div className='App'>
@@ -47,6 +49,8 @@ function App () {
 
                 <Route exact path='/profiles' component={ProfileList} />
                 <Route exact path='/profiles/:id' component={ProfileDetail} />
+
+                <Route exact path='/login' component={Login} />
 
                 <Route exact path='/' component={HomeComponent} />
               </Switch>
