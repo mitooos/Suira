@@ -1,11 +1,13 @@
 .banner{
     background-image: url('/boy-child-clouds-kid-346796.jpg');
-    min-height: 600px;
+    min-height: 700px;
     min-width: 100%;
-    width: 100%;
+    width: 105%;
     height: auto;
     background-repeat:no-repeat;
     background-size: cover;
+    background-position: bottom;
+    margin-left: -20px;
 }
 
 .bannerText{
@@ -16,12 +18,23 @@
     max-width: 80%;
 }
 
+@media (max-width: 500px){
+    .bannerText{
+        top:20px;
+    }
+
+}
+
 .profiles{
    color: purple; 
    text-align: left;
    margin-top: 15px;
-   height: 500px;
-   margin-left: 3rem;
+   height: auto;
+   border: solid purple .3px;
+}
+
+.profiles h3{
+    padding: 10px;
 }
 
 .carousel{
@@ -35,6 +48,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+    margin-bottom: 5px;
 }
 
 .purple{

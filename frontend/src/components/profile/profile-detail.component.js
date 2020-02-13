@@ -54,14 +54,14 @@ export default class ProfileDetail extends Component {
     render() {
         return (
             <Row>
-                <Col>
+                <Col className={styles.column}>
                     <Image src={this.state.ruta_imagen}></Image>
                     <div>
                         <h6>Trayectoría:</h6>
                         <p>{this.state.trayectoria}</p>
                     </div>
                 </Col>
-                <Col>
+                <Col className={styles.column2}>
                     <h4>{this.state.nombre}</h4>
                     <div className={styles.tagsWrapper}>{this.renderTags()}</div>
                     <div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import ProfileCrad from './child-components/profile-card'
 import CardDeck from 'react-bootstrap/CardDeck'
+import styles from './styles/profile.module.css'
 
 export default class ProfileList extends Component{
     constructor(props){
@@ -39,7 +40,7 @@ export default class ProfileList extends Component{
 
     render(){
         return(
-            <CardDeck>
+            <CardDeck className={styles.cardDeck}>
                 {this.dispalayProfiles()}
             </CardDeck>
         )

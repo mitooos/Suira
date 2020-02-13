@@ -13,7 +13,7 @@
 
 .contacto{
     margin: 60px 0;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 a, a:hover{
@@ -30,4 +30,10 @@ a, a:hover{
     overflow: visible !important;
     position: relative;
     bottom: 22px;
+
+}
+
+svg{
+    top: 0 !important;
+    left: -14px !important;
 }
