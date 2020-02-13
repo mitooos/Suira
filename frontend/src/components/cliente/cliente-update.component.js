@@ -20,7 +20,20 @@ export default class ClienteUpdate extends Component {
         perfil: {
           telefono: '',
           empresa: '',
-          descripcion: ''
+          descripcion: '',
+          trayectoria: '',
+          ubicacion:'',
+          tags: [
+            {
+              nombre: ''
+            }
+          ],
+          links: [
+            {
+              plataforma: '',
+              url: ''
+            }
+          ]
         },
         proxima_fecha: '',
         comentarios: '',
@@ -43,7 +56,6 @@ export default class ClienteUpdate extends Component {
   }
 
   updateCliente (cliente) {
-    console.log(JSON.stringify(cliente))
     axios.put(process.env.REACT_APP_API_URL + 'clientes/' + this.state.cliente.id + '/', cliente)
       .then(res => {
         console.log(res.data)

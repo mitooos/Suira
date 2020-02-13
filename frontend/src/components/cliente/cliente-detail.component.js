@@ -3,6 +3,8 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
+import Tag from '../shared-components/tags/tags'
+import Links from '../shared-components/links/links'
 
 export default class ClienteDetail extends Component {
 
@@ -10,7 +12,9 @@ export default class ClienteDetail extends Component {
         super(props);
         this.state = {
             cliente: '',
-            show: false
+            show: false,
+            tags:[],
+            links:[]
         };
     }
 
@@ -25,7 +29,11 @@ export default class ClienteDetail extends Component {
                     empresa: res.data.perfil.empresa,
                     proximaFecha: res.data.proxima_fecha,
                     descripcion: res.data.perfil.descripcion,
-                    comentarios: res.data.comentarios
+                    comentarios: res.data.comentarios,
+                    trayectoria: res.data.perfil.trayectoria,
+                    ubicacion: res.data.perfil.ubicacion,
+                    tags: res.data.perfil.tags,
+                    links: res.data.perfil.links
                 });
             })
             .catch(error => {
@@ -58,18 +66,34 @@ export default class ClienteDetail extends Component {
             })
     }
 
+    renderTags() {
+        return this.state.tags.map((res, i) => {
+            return <Tag obj={res} key={i} />
+        })
+    }
+
+    renderLinks(){
+        return this.state.links.map((res,i) => {
+            return <Links obj={res} key={i} />
+        })
+    }
+
 
     render() {
         return (
             <div>
                 <ul>
                     <li>Nombre: {this.state.nombre}</li>
+                    <div >{this.renderTags()}</div>
                     <li>Email: {this.state.email}</li>
                     <li>Telefono: {this.state.telefono} </li>
                     <li>Empresa: {this.state.empresa} </li>
+                    <li>Ubicación: {this.state.ubicacion}</li>
                     <li>Proxima Fecha: {this.state.proximaFecha}</li>
                     <li>Descripción: {this.state.descripcion}</li>
                     <li>Comentarios: {this.state.comentarios}</li>
+                    <li>Trayectoria: {this.state.trayectoria}</li>
+                    <div>{this.renderLinks()}</div>
                 </ul>
                 <Link to={"/clientes/" + this.state.id + '/update/'}>
                     <Button variant="primary">Actualizar</Button>

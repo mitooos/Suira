@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styles from './footer.module.css'
-import { SocialIcon } from 'react-social-icons';
+import { SocialIcon } from 'react-social-icons'
 
 export default class Footer extends Component {
     render() {

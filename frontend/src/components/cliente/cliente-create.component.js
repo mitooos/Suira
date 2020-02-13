@@ -5,13 +5,13 @@ import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 
 export default class ClienteCreate extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.createCliente = this.createCliente.bind(this)
   }
 
-  createCliente (cliente) {
+  createCliente(cliente) {
     axios.post(process.env.REACT_APP_API_URL + 'clientes/', cliente)
       .then(res => {
         console.log(res.data)
@@ -22,7 +22,7 @@ export default class ClienteCreate extends Component {
       })
   }
 
-  form () {
+  form() {
     const clienteObject = {
       nombre: '',
       usuario: {
@@ -33,7 +33,20 @@ export default class ClienteCreate extends Component {
       perfil: {
         telefono: '',
         empresa: '',
-        descripcion: ''
+        descripcion: '',
+        trayectoria: '',
+        ubicacion: '',
+        tags: [
+          {
+            nombre: ''
+          }
+        ],
+        links: [
+          {
+            plataforma: '',
+            url: ''
+          }
+        ]
       },
       proxima_fecha: '',
       comentarios: '',
@@ -42,7 +55,7 @@ export default class ClienteCreate extends Component {
     return <ClienteForm onSubmit={this.createCliente} btn='Crear' cliente={clienteObject} />
   }
 
-  render () {
+  render() {
     return (
       <div>
         {this.form()}

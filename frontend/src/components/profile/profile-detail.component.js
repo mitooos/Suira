@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Image from 'react-bootstrap/Image'
-import Tag from '../shared-components/tags'
+import Tag from '../shared-components/tags/tags'
 import styles from './styles/profile.module.css'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Links from '../shared-components/links/links'
 
 export default class ProfileDetail extends Component {
 
@@ -12,7 +13,8 @@ export default class ProfileDetail extends Component {
         super(props)
         this.state = {
             cliente: '',
-            tags: []
+            tags: [],
+            links:[]
         }
     }
 
@@ -27,7 +29,9 @@ export default class ProfileDetail extends Component {
                     ruta_imagen: res.data.ruta_imagen,
                     descripcion: res.data.descripcion,
                     trayectoria: res.data.trayectoria,
-                    telefono: res.data.telefono
+                    telefono: res.data.telefono,
+                    links: res.data.links,
+                    ubicacion: res.data.ubicacion
                 })
             })
             .catch(error => {
@@ -38,6 +42,12 @@ export default class ProfileDetail extends Component {
     renderTags() {
         return this.state.tags.map((res, i) => {
             return <Tag obj={res} key={i} />
+        })
+    }
+
+    renderLinks(){
+        return this.state.links.map((res,i) => {
+            return <Links obj={res} key={i} />
         })
     }
 
@@ -60,6 +70,10 @@ export default class ProfileDetail extends Component {
                     </div>
                     <h6>Email: {this.state.email}</h6>
                     <h6>Telefono: {this.state.telefono}</h6>
+                    <h6>Ubicación: {this.state.ubicacion}</h6>
+                    <div className={styles.social}>
+                        {this.renderLinks()}
+                    </div>
                 </Col>
             </Row>
         )

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Card from 'react-bootstrap/Card'
 import { Link } from 'react-router-dom'
-import Tag from '../../shared-components/tags'
+import Tag from '../../shared-components/tags/tags'
 import styles from '../styles/home.module.css'
 
 export default class ProfileCard extends Component {
