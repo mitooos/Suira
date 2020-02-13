@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import {interceptorAxios} from '../../authentication/inteceptor'
 import ClienteForm from './child-components/clienteForm'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
@@ -12,7 +12,7 @@ export default class ClienteCreate extends Component {
   }
 
   createCliente(cliente) {
-    axios.post(process.env.REACT_APP_API_URL + 'clientes/', cliente)
+    interceptorAxios.post(process.env.REACT_APP_API_URL + 'clientes/', cliente)
       .then(res => {
         console.log(res.data)
         this.props.history.push('/clientes')

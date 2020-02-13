@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import {interceptorAxios} from '../../authentication/inteceptor'
 import Table from 'react-bootstrap/Table'
 import ClienteTableRow from './child-components/ClienteTableRow'
 import Button from 'react-bootstrap/Button'
@@ -14,7 +14,7 @@ export default class ClienteList extends Component {
   }
 
   componentDidMount () {
-    axios.get(process.env.REACT_APP_API_URL + 'clientes/')
+    interceptorAxios.get(process.env.REACT_APP_API_URL + 'clientes/')
       .then(res => {
         this.setState({
           clientes: res.data

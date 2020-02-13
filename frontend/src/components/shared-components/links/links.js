@@ -4,7 +4,6 @@ import styles from './links.module.css'
 
 export default class Links extends Component {
     render() {
-        console.log(this.props.obj)
         return (
             <div>
                 <SocialIcon className={styles.socialIcon} url={this.props.obj.url} network={this.props.obj.plataforma} style={{ height: 35, width: 35 }}/>

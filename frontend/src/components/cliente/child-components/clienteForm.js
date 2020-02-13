@@ -196,7 +196,6 @@ export default class ClienteForm extends Component {
     var links = []
     let urls = this.state.urls.split(',')
     this.state.plataformas.split(',').forEach((plataforma, i) => {
-      console.log(plataforma)
       var id = 0
       try {
         id = this.state.idLinks[i]
@@ -232,7 +231,6 @@ export default class ClienteForm extends Component {
       comentarios: this.state.comentarios,
       n_trabajos: this.state.nTrabajos
     }
-    console.log(JSON.stringify(cliente))
     this.props.onSubmit(cliente)
   }
 

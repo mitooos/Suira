@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import {interceptorAxios} from '../../authentication/inteceptor'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from 'react-router-dom';
@@ -19,7 +19,7 @@ export default class ClienteDetail extends Component {
     }
 
     componentDidMount() {
-        axios.get(process.env.REACT_APP_API_URL + 'clientes/' + this.props.match.params.id + '/')
+        interceptorAxios.get(process.env.REACT_APP_API_URL + 'clientes/' + this.props.match.params.id + '/')
             .then(res => {
                 this.setState({
                     id: res.data.id,
@@ -54,7 +54,7 @@ export default class ClienteDetail extends Component {
     }
 
     deleteCliente = () => {
-        axios.delete(process.env.REACT_APP_API_URL + 'clientes/' + this.props.match.params.id + '/')
+        interceptorAxios.delete(process.env.REACT_APP_API_URL + 'clientes/' + this.props.match.params.id + '/')
             .then(
                 res => {
                     console.log(res);

@@ -8,7 +8,7 @@ export const login = (username, password) => {
             password: password
         })
         .then(res => {
-            let token = res.data.token
+            let token = res.data.access
             let refresh = res.data.refresh
             let role = res.data.role
             Cookies.set('token', token, {expires: 1})

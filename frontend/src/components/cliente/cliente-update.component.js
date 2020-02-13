@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import {interceptorAxios} from '../../authentication/inteceptor'
 import ClienteForm from './child-components/clienteForm'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
@@ -33,7 +33,8 @@ export default class ClienteUpdate extends Component {
               plataforma: '',
               url: ''
             }
-          ]
+          ],
+          ruta_imagen:''
         },
         proxima_fecha: '',
         comentarios: '',
@@ -44,7 +45,7 @@ export default class ClienteUpdate extends Component {
   }
 
   componentDidMount () {
-    axios.get(process.env.REACT_APP_API_URL + 'clientes/' + this.props.match.params.id + '/')
+    interceptorAxios.get(process.env.REACT_APP_API_URL + 'clientes/' + this.props.match.params.id + '/')
       .then(res => {
         this.setState({
           cliente: res.data
@@ -56,7 +57,7 @@ export default class ClienteUpdate extends Component {
   }
 
   updateCliente (cliente) {
-    axios.put(process.env.REACT_APP_API_URL + 'clientes/' + this.state.cliente.id + '/', cliente)
+    interceptorAxios.put(process.env.REACT_APP_API_URL + 'clientes/' + this.state.cliente.id + '/', cliente)
       .then(res => {
         console.log(res.data)
         this.props.history.push('/clientes/' + this.state.cliente.id + '/')
