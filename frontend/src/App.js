@@ -9,11 +9,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import ClienteList from './components/cliente/cliente-list.component'
-import ClienteCreate from './components/cliente/cliente-create.component'
-import ClienteDetail from './components/cliente/cliente-detail.component'
-import ClienteUpdate from './components/cliente/cliente-update.component'
-
 import ProfileList from './components/profile/profile-list.component';
 import ProfileDetail from './components/profile/profile-detail.component';
 
@@ -23,17 +18,25 @@ import Footer from './components/footer/footer.component'
 
 import Login from './components/login/login.component'
 
-function App () {
+import AdminNavbar from './components/admin/navbar'
+import AdminRoutes from './components/admin/routes'
+
+import LogOutButton from './components/authenticated/log-out-button'
+
+
+function App() {
+
   return (<Router>
     <div className='App'>
       <Navbar bg='light' expand='sm'>
-        <Navbar.Brand href='/'><img src="/logo.jpeg"alt="logo suira"/></Navbar.Brand>
+        <Navbar.Brand href='/'><img src="/logo.jpeg" alt="logo suira" /></Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
-            <Nav.Link href='/clientes'>Clientes</Nav.Link>
+            <AdminNavbar/>
             <Nav.Link href='/profiles'>Perfiles</Nav.Link>
           </Nav>
+          <LogOutButton/>
         </Navbar.Collapse>
       </Navbar>
 
@@ -41,12 +44,8 @@ function App () {
         <Row>
           <Col>
             <div className='wrapper'>
+            <AdminRoutes/>
               <Switch>
-                <Route exact path='/clientes' component={ClienteList} />
-                <Route exact path='/clientes/create' component={ClienteCreate} />
-                <Route exact path='/clientes/:id/update' component={ClienteUpdate} />
-                <Route exact path='/clientes/:id' component={ClienteDetail} />
-
                 <Route exact path='/profiles' component={ProfileList} />
                 <Route exact path='/profiles/:id' component={ProfileDetail} />
 
@@ -59,9 +58,9 @@ function App () {
         </Row>
       </Container>
     </div>
-    <Footer/>
-          </Router>
-    
+    <Footer />
+  </Router>
+
   )
 }
 

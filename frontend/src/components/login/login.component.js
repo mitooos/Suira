@@ -28,6 +28,7 @@ export default class Login extends Component {
     async login(){
         await login(this.state.username, this.state.password)
         this.props.history.push('/')
+        window.location.reload()
     }
 
 

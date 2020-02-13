@@ -13,7 +13,7 @@ export const login = (username, password) => {
             let role = res.data.role
             Cookies.set('token', token, {expires: 1})
             Cookies.set('refresh', refresh, {expires: 1})
-            Cookies.set('role', role, {expires: 4})
+            Cookies.set('role', role, {expires: 1})
         })
         .catch(err => {
             console.log(err)
