@@ -1,0 +1,19 @@
+branch-defaults:
+  default:
+    environment: suira-back
+deploy:
+  artifact: Dockerrun.aws.json
+global:
+  application_name: suira-back
+  branch: null
+  default_ec2_keyname: null
+  default_platform: Docker 18.09.9-ce
+  default_region: sa-east-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: null
+  sc: null
+  workspace_type: Application

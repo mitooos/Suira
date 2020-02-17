@@ -1,0 +1,10 @@
+.socialIcon {
+    overflow: visible !important;
+    position: relative;
+    bottom: 22px;
+    margin-top: 5px;
+}
+
+svg{
+    top:23px !important;
+}
