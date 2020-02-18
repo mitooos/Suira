@@ -17,6 +17,7 @@ export default class HomeComponent extends Component {
     }
 
     componentDidMount() {
+        console.log(process.env.REACT_APP_API_URL)
         axios.get(process.env.REACT_APP_API_URL + 'profiles/')
             .then(res => {
                 this.setState({
