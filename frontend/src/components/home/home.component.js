@@ -17,6 +17,7 @@ export default class HomeComponent extends Component {
     }
 
     componentDidMount() {
+        console.log(process.env.REACT_APP_API_URL)
         axios.get(process.env.REACT_APP_API_URL + 'profiles/')
             .then(res => {
                 this.setState({
@@ -29,6 +30,7 @@ export default class HomeComponent extends Component {
     }
 
     dispalayProfiles() {
+        console.log(this.state.profiles)
         return this.state.profiles.map((res, i) => {
             const profile = {
                 id: res.id,
