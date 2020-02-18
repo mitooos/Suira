@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav'
 export default class AdminNavbar extends Component {
     render() {
         if(getRole() === 'admin'){
-
+            
             return (
                 <div>
                     <Nav.Link href='/clientes'>Clientes</Nav.Link>

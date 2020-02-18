@@ -29,6 +29,7 @@ export default class HomeComponent extends Component {
     }
 
     dispalayProfiles() {
+        console.log(this.state.profiles)
         return this.state.profiles.map((res, i) => {
             const profile = {
                 id: res.id,

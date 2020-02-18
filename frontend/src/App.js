@@ -44,7 +44,6 @@ function App() {
         <Row>
           <Col>
             <div className='wrapper'>
-            <AdminRoutes/>
               <Switch>
                 <Route exact path='/profiles' component={ProfileList} />
                 <Route exact path='/profiles/:id' component={ProfileDetail} />
@@ -52,6 +51,7 @@ function App() {
                 <Route exact path='/login' component={Login} />
 
                 <Route exact path='/' component={HomeComponent} />
+                <AdminRoutes/>
               </Switch>
             </div>
           </Col>
